@@ -22,38 +22,30 @@ styles.add(ParagraphStyle(name="CoverSub", parent=styles["Normal"], fontSize=14,
 
 story = []
 
-# ---------- CARATULA ----------
-story.append(Spacer(1, 1.0 * inch))
-story.append(Paragraph("Universidad del Valle de Guatemala", ParagraphStyle(name="UniName", parent=styles["Normal"], fontSize=16, alignment=TA_CENTER, spaceAfter=4)))
-story.append(Paragraph("Facultad de Ingeniería", ParagraphStyle(name="FacName", parent=styles["Normal"], fontSize=13, alignment=TA_CENTER, spaceAfter=40)))
+# ---------- CARATULA (formato UVG estándar) ----------
+caratula_center = ParagraphStyle(name="CaratulaCenter", parent=styles["Normal"], alignment=TA_CENTER, fontSize=12, leading=16)
 
-story.append(Paragraph("CC2017 — Modelación y Simulación", styles["CoverSub"]))
-story.append(Spacer(1, 0.4 * inch))
-story.append(Paragraph("Laboratorio 5", styles["CoverTitle"]))
-story.append(Paragraph("Modelo espacial de cobertura hospitalaria", ParagraphStyle(name="Subtitle2", parent=styles["Normal"], fontSize=16, alignment=TA_CENTER, textColor=colors.HexColor("#2d6a4f"), spaceAfter=10)))
-story.append(Paragraph("Estado analizado: Indiana (IN)", ParagraphStyle(name="StateLine", parent=styles["Normal"], fontSize=12, alignment=TA_CENTER, spaceAfter=50)))
-
-story.append(Spacer(1, 1.2 * inch))
-integrantes_tbl = Table(
-    [["Integrantes del grupo"], ["Leonardo Mejía"], ["María José"]],
-    colWidths=[3.2 * inch],
-)
-integrantes_tbl.setStyle(TableStyle([
-    ("ALIGN", (0, 0), (-1, -1), "CENTER"),
-    ("FONTSIZE", (0, 0), (0, 0), 12),
-    ("FONTNAME", (0, 0), (0, 0), "Helvetica-Bold"),
-    ("FONTSIZE", (0, 1), (0, -1), 11),
-    ("TOPPADDING", (0, 0), (-1, -1), 4),
-    ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
-    ("LINEBELOW", (0, 0), (0, 0), 0.75, colors.HexColor("#2d6a4f")),
-]))
-story.append(integrantes_tbl)
-
-story.append(Spacer(1, 1.0 * inch))
-story.append(Paragraph(f'Repositorio de GitHub: <link href="{GITHUB_URL}">{GITHUB_URL}</link>',
-                        ParagraphStyle(name="GHLink", parent=styles["Normal"], fontSize=11, alignment=TA_CENTER, textColor=colors.HexColor("#1a73e8"))))
 story.append(Spacer(1, 0.3 * inch))
-story.append(Paragraph("2026", ParagraphStyle(name="Year", parent=styles["Normal"], fontSize=11, alignment=TA_CENTER)))
+story.append(Paragraph("UNIVERSIDAD DEL VALLE DE GUATEMALA", ParagraphStyle(name="UniName", parent=styles["Normal"], fontSize=14, alignment=TA_CENTER, spaceAfter=20)))
+story.append(Paragraph("CC2017 — Modelación y Simulación", caratula_center))
+story.append(Spacer(1, 0.5 * inch))
+
+story.append(Image("assets/uvg_logo.png", width=2.1 * inch, height=2.1 * inch * (448 / 301)))
+story.append(Spacer(1, 0.5 * inch))
+
+story.append(Paragraph("Laboratorio 5", ParagraphStyle(name="CoverTitle2", parent=styles["Normal"], fontSize=16, alignment=TA_CENTER, spaceAfter=2)))
+story.append(Paragraph("Informe", ParagraphStyle(name="CoverInforme", parent=styles["Normal"], fontSize=13, alignment=TA_CENTER, spaceAfter=4)))
+story.append(Paragraph("Modelo espacial de cobertura hospitalaria — Indiana (IN)",
+                        ParagraphStyle(name="Subtitle2", parent=styles["Normal"], fontSize=11, alignment=TA_CENTER, textColor=colors.HexColor("#2d6a4f"), spaceAfter=30)))
+
+story.append(Paragraph("Leonardo Dufrey Mejía Mejía", caratula_center))
+story.append(Paragraph("María José Girón Isidro", caratula_center))
+story.append(Spacer(1, 0.6 * inch))
+
+story.append(Paragraph(f'Repositorio de GitHub: <link href="{GITHUB_URL}">{GITHUB_URL}</link>',
+                        ParagraphStyle(name="GHLink", parent=styles["Normal"], fontSize=10.5, alignment=TA_CENTER, textColor=colors.HexColor("#1a73e8"), spaceAfter=20)))
+
+story.append(Paragraph("6 de octubre de 2026", caratula_center))
 
 story.append(PageBreak())
 
