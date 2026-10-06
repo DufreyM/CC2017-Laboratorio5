@@ -336,8 +336,8 @@ p("<b>Tercero</b>, los pesos del índice de vulnerabilidad los elegimos con un a
   "de desenlaces de salud o con un panel de expertos en salud pública.")
 
 story.append(Spacer(1, 20))
-story.append(HRFlowable(width="100%", color=colors.HexColor("#cccccc")))
+story.append(HRFlowable(width="100%", color=colors.black))
 story.append(Spacer(1, 10))
 story.append(Paragraph(
-    f'Código completo, notebook ejecutado y datos: <link href="{GITHUB_URL}">{GITHUB_URL}</link>',
-    ParagraphStyle(name="Footer", parent=styles["Normal"], fontSize=10, alignment=TA_CENTER, textColor=colors.HexColor("#1a73e8"))))
+    f'Código completo, notebook ejecutado y datos: <link href="{GITHUB_URL}"><u>{GITHUB_URL}</u></link>',
+    ParagraphStyle(name="Footer", parent=styles["Normal"], fontName="Times-Roman", fontSize=10, alignment=TA_CENTER, textColor=colors.black)))
