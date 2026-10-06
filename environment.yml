@@ -1,0 +1,22 @@
+name: lab5
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - geopandas
+  - osmnx
+  - pandas
+  - shapely
+  - pyproj
+  - pyogrio
+  - networkx
+  - matplotlib
+  - seaborn
+  - contextily
+  - folium
+  - mapclassify
+  - scikit-learn
+  - scipy
+  - jupyterlab
+  - ipykernel
+  - rtree

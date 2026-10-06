@@ -1,0 +1,10 @@
+services:
+  lab5:
+    build: .
+    image: lab5-hospitales:latest
+    container_name: lab5-hospitales
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
